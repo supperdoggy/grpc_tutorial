@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package sumpb;
+option go_package="hw_sum/sumpb/";
+
+message AddRequest {
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message AddResponse {
+  int64 sum = 1;
+}
+
+service SumService {
+  rpc Add(AddRequest) returns (AddResponse);
+}
+
