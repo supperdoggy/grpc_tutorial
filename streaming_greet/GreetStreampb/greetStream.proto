@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package greetStreampb;
+option go_package="streaming_greet/GreetStreampb/";
+
+message GreetManyTimesRequest {
+  string first_name = 1;
+  string last_name = 2;
+}
+
+message GreetManyTimesResponse {
+  string answer = 1;
+}
+
+service StreamGreetingService {
+  rpc GreetManyTimes(GreetManyTimesRequest) returns (stream GreetManyTimesResponse);
+}
