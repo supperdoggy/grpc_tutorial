@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package decompositionpb;
+option go_package="hw_streaming_number_decomposition/NumberDecompositionpb/";
+
+message NumberDecompositionStreamRequest {
+  int64 number = 1;
+}
+
+message NumberDecompositionStreamResponse {
+  int64 number = 1;
+}
+
+service StreamGreetingService {
+  rpc NumberDecompositionStream(NumberDecompositionStreamRequest) returns (stream NumberDecompositionStreamResponse);
+}
