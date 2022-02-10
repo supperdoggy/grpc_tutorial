@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package avrgpb;
+option go_package="hw_client_streaming/avrgpb/";
+
+message AvrgClientNumberStreamRequest {
+  int64 number = 1;
+}
+
+message AvrgClientNumberStreamResponse {
+  int64 number = 1;
+}
+
+service StreamGreetingService {
+  rpc AvrgClientNumberStream(stream AvrgClientNumberStreamRequest) returns (AvrgClientNumberStreamResponse);
+}
