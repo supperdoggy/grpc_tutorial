@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package maxpb;
+option go_package="hw_bidirectional_streaming/maxpb/";
+
+message MaxStreamIntRequest {
+  int64 number = 1;
+}
+
+message MaxStreamIntResponse {
+  int64 number = 1;
+}
+
+service BiDirectionalStreaming {
+  rpc MaxStreamInt(stream MaxStreamIntRequest) returns (stream MaxStreamIntResponse);
+}
